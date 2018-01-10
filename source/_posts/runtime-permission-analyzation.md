@@ -5,12 +5,12 @@ title: 从源码看6.0权限 —— 跟踪 Activity.requestPermissions()
 # 1 写在前面
 话说 6.0 出来已经挺久了，对于权限适配我们也有很多轮子可用。关于如何适配 6.0 权限，网上资料很多也很完善，故并不会展开探讨。
 
-不用第三方框架的话，我们会和这些 api 打交道：
+不用第三方框架的话，我们会和这些 api 打交道 (方法太长省略参数)：
 
-- `Context.checkSelfPermission(String permission)`
-- `Activity.requestPermissions(String[] permissions, int requestCode)`
-- `Activity.onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)`
-- `Activity.shouldShowRequestPermissionRationale(String permission)`
+- `Context.checkSelfPermission()`
+- `Activity.requestPermissions()`
+- `Activity.onRequestPermissionsResult()`
+- `Activity.shouldShowRequestPermissionRationale()`
 
 显然全部分析篇幅过长，根据二八法则，我们只分析主线而忽略掉庞杂的枝干。
 
